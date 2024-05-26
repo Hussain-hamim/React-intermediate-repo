@@ -44,13 +44,17 @@ const TodoForm = () => {
               completed: false,
               userId: 1,
             });
+
+          if (ref.current) ref.current.value = "";
         }}
       >
         <div className="col">
           <input title="todo" ref={ref} type="text" className="form-control" />
         </div>
         <div className="col">
-          <button className="btn btn-primary">Add</button>
+          <button className="btn btn-primary">
+            {addTodo.isPending ? "Adding..." : "Add"}
+          </button>
         </div>
       </form>
     </>
