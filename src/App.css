@@ -1,20 +1,26 @@
-.loader {
-  height: 100px;
-  width: 100px;
+img {
+  width: 200px;
   border-radius: 50%;
-  border: 15px solid wheat;
-  border-top: 15px solid #b9c9d7;
-  animation: spin 2s linear infinite;
-
-  /* transform: rotate(0deg); */
-  /* transform:  rotate(360deg); */
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+h4 {
+  margin: 5px;
+}
+
+p {
+  margin: 5px;
+}
+
+.badge {
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid beige;
+  border-radius: 8px;
+  background-color: gray;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
 }
