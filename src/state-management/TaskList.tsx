@@ -2,18 +2,26 @@ import { useReducer, useState } from "react";
 import taskReducer from "./reducers/taskReducer";
 
 const TaskList = () => {
-  // const [tasks, setTasks] = useState<Task[]>([]);
   const [tasks, dispatch] = useReducer(taskReducer, []);
+  const [title, setTitle] = useState("");
 
   return (
     <>
+      <input
+        placeholder="Add Task here..."
+        className="form-control"
+        type="text"
+        value={title}
+        onChange={(evt) => setTitle(evt.target.value)}
+      />
       <button
-        onClick={() =>
+        onClick={() => {
           dispatch({
             type: "ADD",
-            task: { id: Date.now(), title: "Hussain " + Date.now() },
-          })
-        }
+            task: { id: Date.now(), title: title },
+          });
+          setTitle("");
+        }}
         className="btn btn-primary my-3"
       >
         Add Task
