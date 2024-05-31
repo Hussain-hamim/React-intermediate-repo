@@ -4,7 +4,6 @@ import taskReducer from "./reducers/taskReducer";
 const TaskList = () => {
   const [tasks, dispatch] = useReducer(taskReducer, []);
   const [title, setTitle] = useState("");
-
   return (
     <>
       <input
