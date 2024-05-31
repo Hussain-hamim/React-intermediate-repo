@@ -5,6 +5,7 @@ import TodoList from "./react-query/TodoList";
 import hussain from "./assets/hhamim.jpg";
 import HomePage from "./routing/HomePage";
 import Counter from "./state-management/Counter";
+import TaskList from "./state-management/TaskList";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       {/* <PostList /> */}
       {/* <TodoForm /> */}
       {/* <TodoList /> */}
-      <Counter />
+      {/* <Counter /> */}
+      <TaskList />
     </>
   );
 }
