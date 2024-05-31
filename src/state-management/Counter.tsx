@@ -2,7 +2,9 @@ import { useReducer, useState } from "react";
 import counterReducer from "./reducers/counterReducer";
 
 const Counter = () => {
-  // const [value, setValue] = useState(0);
+  /** Reducer: a function that allow us to centralize state updates
+   * in a component
+   */
   const [value, dispatch] = useReducer(counterReducer, 0);
 
   return (

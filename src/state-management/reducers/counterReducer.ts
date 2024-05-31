@@ -1,4 +1,5 @@
 interface Action {
+  // union of literal values
   type: "reset" | "increment";
 }
 
