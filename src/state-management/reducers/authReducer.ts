@@ -8,7 +8,7 @@ interface ActionLogout {
 
 type AuthAction = ActionLogin | ActionLogout;
 
-const authReducer = (state: string, action: AuthAction) => {
+const authReducer = (state: string, action: AuthAction): string => {
   if (action.type === "login") return action.username;
   if (action.type === "logout") return "";
   return state;
