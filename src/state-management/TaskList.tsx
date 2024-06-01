@@ -1,9 +1,14 @@
 import { useReducer, useState } from "react";
 import taskReducer from "./reducers/taskReducer";
 
-const TaskList = () => {
+interface Prop {
+  count: (c: number) => void;
+}
+
+const TaskList = ({ count }: Prop) => {
   const [tasks, dispatch] = useReducer(taskReducer, []);
   const [title, setTitle] = useState("");
+
   return (
     <>
       <input
@@ -15,11 +20,13 @@ const TaskList = () => {
       />
       <button
         onClick={() => {
+          if (!title) return;
           dispatch({
             type: "ADD",
             task: { id: Date.now(), title: title },
           });
           setTitle("");
+          count(tasks.length + 1);
         }}
         className="btn btn-primary my-3"
       >
@@ -34,7 +41,10 @@ const TaskList = () => {
             <span className="flex-grow-1">{task.title}</span>
             <button
               className="btn btn-outline-danger"
-              onClick={() => dispatch({ type: "DELETE", taskId: task.id })}
+              onClick={() => {
+                dispatch({ type: "DELETE", taskId: task.id });
+                count(tasks.length - 1);
+              }}
             >
               Delete
             </button>
