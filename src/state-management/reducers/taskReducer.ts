@@ -12,7 +12,7 @@ interface DeleteTask {
   taskId: number; // payload
 }
 
-type TaskAction = AddTask | DeleteTask;
+export type TaskAction = AddTask | DeleteTask;
 
 const taskReducer = (tasks: Task[], action: TaskAction): Task[] => {
   switch (action.type) {

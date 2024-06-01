@@ -1,12 +1,9 @@
-import { useReducer, useState } from "react";
+import { useContext, useReducer, useState } from "react";
 import taskReducer from "./reducers/taskReducer";
+import TaskContext from "./contexts/tasksContext";
 
-interface Prop {
-  count: (c: number) => void;
-}
-
-const TaskList = ({ count }: Prop) => {
-  const [tasks, dispatch] = useReducer(taskReducer, []);
+const TaskList = () => {
+  const { tasks, dispatch } = useContext(TaskContext);
   const [title, setTitle] = useState("");
 
   return (
@@ -26,7 +23,6 @@ const TaskList = ({ count }: Prop) => {
             task: { id: Date.now(), title: title },
           });
           setTitle("");
-          count(tasks.length + 1);
         }}
         className="btn btn-primary my-3"
       >
@@ -43,7 +39,6 @@ const TaskList = ({ count }: Prop) => {
               className="btn btn-outline-danger"
               onClick={() => {
                 dispatch({ type: "DELETE", taskId: task.id });
-                count(tasks.length - 1);
               }}
             >
               Delete

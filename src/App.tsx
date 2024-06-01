@@ -10,16 +10,19 @@ import LoginStatus from "./state-management/LoginStatus";
 import NavBar from "./state-management/NavBar";
 import { useReducer, useState } from "react";
 import taskReducer from "./state-management/reducers/taskReducer";
+import TaskContext from "./state-management/contexts/tasksContext";
+
+// import { Dispatch } from "react";
 
 function App() {
-  const [count, setCounter] = useState(0);
-
-  console.log(count);
+  const [tasks, dispatch] = useReducer(taskReducer, []);
 
   return (
     <>
-      <NavBar count={count} />
-      <TaskList count={(c: number) => setCounter(c)} />
+      <TaskContext.Provider value={{ tasks, dispatch }}>
+        <NavBar />
+        <TaskList />
+      </TaskContext.Provider>
     </>
   );
 }

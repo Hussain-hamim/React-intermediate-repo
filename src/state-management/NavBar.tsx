@@ -1,14 +1,14 @@
+import { useContext } from "react";
 import LoginStatus from "./LoginStatus";
+import TaskContext from "./contexts/tasksContext";
 import { Task } from "./reducers/taskReducer";
 
-interface Prop {
-  count: number;
-}
+const NavBar = () => {
+  const { tasks } = useContext(TaskContext);
 
-const NavBar = ({ count }: Prop) => {
   return (
     <nav className="navbar d-flex justify-content-between">
-      <span className="badge text-bg-secondary">{count}</span>
+      <span className="badge text-bg-secondary">{tasks.length}</span>
       <LoginStatus />
     </nav>
   );
