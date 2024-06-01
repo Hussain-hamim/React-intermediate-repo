@@ -6,9 +6,7 @@ const LoginStatus = () => {
     return (
       <>
         <div>
-          <h2>welcome </h2>
           <span className="mx-2">{user}</span>
-          <hr />
           <a
             className="btn btn-primary"
             onClick={() => dispatch({ type: "logout" })}

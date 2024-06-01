@@ -9,7 +9,7 @@ const TaskList = () => {
 
   return (
     <>
-      <p>User: {user}</p>
+      <p className="badge">User: {user}</p>
       <input
         placeholder="Add Task here..."
         className="form-control"
