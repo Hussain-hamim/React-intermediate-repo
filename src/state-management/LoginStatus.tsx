@@ -7,9 +7,7 @@ const LoginStatus = () => {
   if (user)
     return (
       <>
-        <div
-          style={{ height: "200px", width: "100%", backgroundColor: "pink" }}
-        >
+        <div>
           <h2>welcome </h2>
           <span className="mx-2">{user}</span>
           <hr />

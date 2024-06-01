@@ -10,7 +10,7 @@ const TaskList = () => {
 
   return (
     <>
-      <p>{user}</p> // we got the user via context
+      <p>User: {user}</p>
       <input
         placeholder="Add Task here..."
         className="form-control"
