@@ -3,7 +3,7 @@ import authReducer from "./reducers/authReducer";
 import AuthContext from "./contexts/authContext";
 
 const LoginStatus = () => {
-  const { user, authDispatch } = useContext(AuthContext);
+  const { user, dispatch } = useContext(AuthContext);
   if (user)
     return (
       <>
@@ -13,7 +13,7 @@ const LoginStatus = () => {
           <hr />
           <a
             className="btn btn-primary"
-            onClick={() => authDispatch({ type: "logout" })}
+            onClick={() => dispatch({ type: "logout" })}
             href="#"
           >
             Logout
@@ -25,9 +25,7 @@ const LoginStatus = () => {
     <div>
       <a
         className="btn btn-primary"
-        onClick={() =>
-          authDispatch({ type: "login", username: "hussain.hamim" })
-        }
+        onClick={() => dispatch({ type: "login", username: "hussain.hamim" })}
         href="#"
       >
         Login

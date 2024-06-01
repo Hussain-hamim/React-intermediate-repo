@@ -13,21 +13,21 @@ import taskReducer from "./state-management/reducers/taskReducer";
 import TaskContext from "./state-management/contexts/tasksContext";
 import authReducer from "./state-management/reducers/authReducer";
 import AuthContext from "./state-management/contexts/authContext";
+import AuthProvider from "./state-management/AuthProvider";
 
 // import { Dispatch } from "react";
 
 function App() {
   const [tasks, taskDispatch] = useReducer(taskReducer, []);
-  const [user, authDispatch] = useReducer(authReducer, "");
 
   return (
     <>
-      <AuthContext.Provider value={{ user, authDispatch }}>
+      <AuthProvider>
         <TaskContext.Provider value={{ tasks, dispatch: taskDispatch }}>
           <NavBar />
           <TaskList />
         </TaskContext.Provider>
-      </AuthContext.Provider>
+      </AuthProvider>
     </>
   );
 }
