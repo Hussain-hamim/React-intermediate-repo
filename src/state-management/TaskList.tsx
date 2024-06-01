@@ -1,13 +1,16 @@
 import { useContext, useReducer, useState } from "react";
 import taskReducer from "./reducers/taskReducer";
 import TaskContext from "./contexts/tasksContext";
+import AuthContext from "./contexts/authContext";
 
 const TaskList = () => {
   const { tasks, dispatch } = useContext(TaskContext);
+  const { user } = useContext(AuthContext);
   const [title, setTitle] = useState("");
 
   return (
     <>
+      <p>{user}</p> // we got the user via context
       <input
         placeholder="Add Task here..."
         className="form-control"

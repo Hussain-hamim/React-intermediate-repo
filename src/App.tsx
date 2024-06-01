@@ -11,18 +11,23 @@ import NavBar from "./state-management/NavBar";
 import { useReducer, useState } from "react";
 import taskReducer from "./state-management/reducers/taskReducer";
 import TaskContext from "./state-management/contexts/tasksContext";
+import authReducer from "./state-management/reducers/authReducer";
+import AuthContext from "./state-management/contexts/authContext";
 
 // import { Dispatch } from "react";
 
 function App() {
-  const [tasks, dispatch] = useReducer(taskReducer, []);
+  const [tasks, taskDispatch] = useReducer(taskReducer, []);
+  const [user, authDispatch] = useReducer(authReducer, "");
 
   return (
     <>
-      <TaskContext.Provider value={{ tasks, dispatch }}>
-        <NavBar />
-        <TaskList />
-      </TaskContext.Provider>
+      <AuthContext.Provider value={{ user, authDispatch }}>
+        <TaskContext.Provider value={{ tasks, dispatch: taskDispatch }}>
+          <NavBar />
+          <TaskList />
+        </TaskContext.Provider>
+      </AuthContext.Provider>
     </>
   );
 }
