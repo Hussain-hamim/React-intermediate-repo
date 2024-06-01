@@ -1,11 +1,10 @@
-import { useContext, useReducer, useState } from "react";
-import taskReducer from "./reducers/taskReducer";
-import TaskContext from "./contexts/tasksContext";
-import AuthContext from "./contexts/authContext";
+import { useState } from "react";
+import useAuth from "./hooks/useAuth";
+import useTask from "./hooks/useTask";
 
 const TaskList = () => {
-  const { tasks, dispatch } = useContext(TaskContext);
-  const { user } = useContext(AuthContext);
+  const { tasks, dispatch } = useTask();
+  const { user } = useAuth();
   const [title, setTitle] = useState("");
 
   return (
