@@ -1,5 +1,5 @@
 import "./App.css";
-import AuthProvider from "./state-management/auth/AuthProvider";
+import Counter from "./state-management/counter/Counter";
 import NavBar from "./state-management/NavBar";
 import { TaskProvider } from "./state-management/tasks";
 import TaskList from "./state-management/tasks/TaskList";
@@ -7,13 +7,12 @@ import TaskList from "./state-management/tasks/TaskList";
 function App() {
   return (
     <>
-      <AuthProvider>
-        <TaskProvider>
-          <NavBar />
-          <hr />
-          <TaskList />
-        </TaskProvider>
-      </AuthProvider>
+      <TaskProvider>
+        <Counter />
+        <NavBar />
+        <hr />
+        <TaskList />
+      </TaskProvider>
     </>
   );
 }
