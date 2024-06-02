@@ -6,7 +6,7 @@ interface AuthStore {
   logout: () => void;
 }
 
-const useAuthStore = create<AuthStore>((set) => ({
+const useAuthStore = create<AuthStore>()((set) => ({
   user: "",
   login: (username: string) => set(() => ({ user: username })),
   logout: () => set(() => ({ user: "" })),
