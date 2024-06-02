@@ -1,12 +1,8 @@
 import useCounterStore from "./store";
 
 const Counter = () => {
-  /** Reducer: a function that allow us to centralize state updates
-   * in a component
-   */
-  // const [value, dispatch] = useReducer(counterReducer, 0);
-  const { increment, reset } = useCounterStore(); //  Zustand
-  const counter = useCounterStore((s) => s.counter); //  Zustand will render it only when the counter value changes
+  const { counter, increment, reset } = useCounterStore(); //  Zustand
+  // const counter = useCounterStore((s) => s.counter); //  Zustand will render it only when the counter value changes
 
   return (
     <div>
