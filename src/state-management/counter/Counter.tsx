@@ -1,5 +1,5 @@
 import { useReducer, useState } from "react";
-import counterReducer from "./reducers/counterReducer";
+import counterReducer from "./counterReducer";
 
 const Counter = () => {
   /** Reducer: a function that allow us to centralize state updates
