@@ -2,8 +2,8 @@ const HomePage = () => {
   return (
     <>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Incidunt, mollitia!
+        <h2>Welcome dear</h2>
+        <p>This is the Home page for the site</p>
       </p>
       <a href="/users">Users</a>
     </>

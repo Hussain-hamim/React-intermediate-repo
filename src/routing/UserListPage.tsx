@@ -1,9 +1,10 @@
 const UserListPage = () => {
   const users = [
-    { id: 1, name: 'Mosh' },
-    { id: 2, name: 'John' },
-    { id: 3, name: 'Alice' },
+    { id: 1, name: "Hussain" },
+    { id: 2, name: "Haroon" },
+    { id: 3, name: "Hamza" },
   ];
+
   return (
     <ul className="list-group">
       {users.map((user) => (
