@@ -6,6 +6,7 @@ const Layout = () => {
     <>
       <NavBar />
       <div id="main">
+        {/* Outlet: like a placeholder for child comps */}
         <Outlet />
       </div>
     </>
