@@ -1,20 +1,20 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import NavBar from "./NavBar";
 import UserList from "./UserList";
-import useAuth from "./useAuth";
 
 const UserPage = () => {
-  const { user } = useAuth();
-  if (!user) return <Navigate to="/login" />;
-
   return (
-    <div className="row">
-      <div className="col">
-        <UserList />
+    <>
+      <NavBar />
+      <div className="row">
+        <div className="col">
+          <UserList />
+        </div>
+        <div className="col">
+          <Outlet />
+        </div>
       </div>
-      <div className="col">
-        <Outlet />
-      </div>
-    </div>
+    </>
   );
 };
 

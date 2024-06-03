@@ -5,9 +5,9 @@ const UserList = () => {
     { id: 1, name: "Hussain" },
     { id: 2, name: "Haroon" },
     { id: 3, name: "Hamza" },
-    { id: 1, name: "Hussain" },
-    { id: 2, name: "Haroon" },
-    { id: 3, name: "Hamza" },
+    { id: 4, name: "Hamim" },
+    { id: 5, name: "Hawa" },
+    { id: 6, name: "Sohaib" },
   ];
 
   return (
